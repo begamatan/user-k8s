@@ -1,0 +1,63 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: user-api
+  labels:
+    app: user-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: user-api
+  template:
+    metadata:
+      labels:
+        app: user-api
+    spec:
+      containers:
+      - name: user-api
+        image: begamatan/user-be-k8s_app:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_USER
+          valueFrom:
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-root-username
+        - name: DB_PASSWORD
+          valueFrom: 
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-root-password
+        - name: DB_HOST
+          valueFrom: 
+            configMapKeyRef:
+              name: mongodb-configmap
+              key: database_url
+        - name: DB_NAME
+          valueFrom: 
+            secretKeyRef:
+              name: mongodb-secret
+              key: mongo-root-db
+        - name: DB_PORT
+          value: "27017"
+        - name: API_SECRET
+          valueFrom: 
+            secretKeyRef:
+              name: app-secret
+              key: api-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: user-api-service
+spec:
+  selector:
+    app: user-api
+  type: NodePort
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      nodePort: 30000
