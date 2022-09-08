@@ -33,7 +33,7 @@ exports.show = async (req, res) => {
   // send unauthorized for non admin user when accessing other user's detail
   if (user.id != req.user.id && req.user.role != "Admin") {
     return res
-      .status(401)
+      .status(403)
       .send({ message: "You are unauthorized to access this resource" });
   }
 
