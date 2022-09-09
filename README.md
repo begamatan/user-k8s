@@ -50,4 +50,4 @@ Postman docs with response examples for each status (unauthenticated, success, u
 https://documenter.getpostman.com/view/17141422/VVBZQPUi
 ```
 
-Please see `docs` directory inside this repository for more information about API flowchart and postman collection
+Please see [docs](https://github.com/begamatan/user-k8s/tree/main/docs) directory inside this repository for more information about API flowchart and postman collection
