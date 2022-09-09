@@ -21,5 +21,31 @@ kubectl apply -f mongo.yaml
 kubectl apply -f user-api.yaml 
 ```
 
+Check if deployment success, you can see 2 pods, one for mongodb and another one for user-service
+```
+jaunty@jackalope:~/work/js/user-k8s$ kubectl get pod
+NAME                                  READY   STATUS    RESTARTS   AGE
+mongodb-deployment-774c9dbc86-vp9lc   1/1     Running   0          37s
+user-api-5b785c874c-r4bk9             1/1     Running   0          27s
+```
+
 # Usage
 User Service is exposed at port 30000 using NodePort Service type
+
+Default admin role user:
+```
+username: admin
+password: admin
+```
+Default user role user:
+```
+username: user
+password: user
+```
+
+Authentication token is passed with header `x-access-token`
+
+Postman docs with response examples for each status (unauthenticated, success, unauthorized, etc)
+```
+https://documenter.getpostman.com/view/17141422/VVBZQPUi
+```
