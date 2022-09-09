@@ -49,3 +49,5 @@ Postman docs with response examples for each status (unauthenticated, success, u
 ```
 https://documenter.getpostman.com/view/17141422/VVBZQPUi
 ```
+
+Please see `docs` directory inside this repository for more information about API flowchart and postman collection
