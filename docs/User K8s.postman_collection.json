@@ -1,0 +1,2059 @@
+{
+	"info": {
+		"_postman_id": "dfe38b23-a32a-4f71-bac8-faefe6f4b6c9",
+		"name": "User K8s",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17141422"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/api/v1/login",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "User Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin2",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-ZEVVcvtFhxKX/QUvVKqKxwGbbNA\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 12:07:11 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User not found\"\n}"
+				},
+				{
+					"name": "Invalid Password",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "43"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2b-coJFPr8X0UFTEHXt/qjGh/VuUcw\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 12:07:45 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": null,\n    \"message\": \"Invalid Password\"\n}"
+				},
+				{
+					"name": "Login Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "admin",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "266"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10a-gZXsbcQNnjjBHAOiXcv/HiX8RRY\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 12:08:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"6319a04f02b819a3a91e786f\",\n        \"username\": \"admin\",\n        \"name\": \"Administrator\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjYzODg5NCwiZXhwIjoxNjYyNjQ2MDk0fQ.cFexhcibJk3Rqv8PUoe3eX1CMMCss9Pd66rBdzPkF1Q\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "User List",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{ADMIN_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/api/v1/user",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthenticated",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjYzNDYzNCwiZXhwIjoxNjYyNjQxODM0fQ.SulQcEXjK5M-BREprk11XRMLQFKtHD9fE-_DIBy_Kwg",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							],
+							"query": [
+								{
+									"key": "x-access-token",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-MWhLQqUzlWxQX/Dkxrtdq5BHAaQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 12:09:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthenticated\"\n}"
+				},
+				{
+					"name": "User List as Admin",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjYzODg5NCwiZXhwIjoxNjYyNjQ2MDk0fQ.cFexhcibJk3Rqv8PUoe3eX1CMMCss9Pd66rBdzPkF1Q",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "267"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10b-Nbz+6MOaLlb64XXWnlDtZgowGq8\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 12:10:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"6319a04f02b819a3a91e786f\",\n            \"name\": \"Administrator\",\n            \"username\": \"admin\",\n            \"role\": \"Admin\"\n        },\n        {\n            \"id\": \"6319a04f02b819a3a91e7870\",\n            \"name\": \"User 1\",\n            \"username\": \"user\",\n            \"role\": \"User\"\n        },\n        {\n            \"id\": \"6319a1cab7415ba2da45073a\",\n            \"name\": \"User 4\",\n            \"username\": \"user4\",\n            \"role\": \"Admin\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "User List as User",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg3MCIsImlhdCI6MTY2MjYzODkzMCwiZXhwIjoxNjYyNjQ2MTMwfQ.Y3K6EsR65lg1deYyB46GSOil3e_JkU3u5Hhke83iKlE",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c-ZG59sn3AsuvXfMP2j1oojq7xe9g\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 08 Sep 2022 12:11:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": [\n        {\n            \"id\": \"6319a04f02b819a3a91e7870\",\n            \"name\": \"User 1\",\n            \"username\": \"user\",\n            \"role\": \"User\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "User Detail",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{ADMIN_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/api/v1/user/6319a04f02b819a3a91e7870",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"6319a04f02b819a3a91e7870"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthenticated",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg3MCIsImlhdCI6MTY2MjYzNDY3MCwiZXhwIjoxNjYyNjQxODcwfQ.tKOgWMpG2wDMREzQgGXtIAtWSvkRfCcqsOsjQknBKLU",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/6319a04f02b819a3a91e7870",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"6319a04f02b819a3a91e7870"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-MWhLQqUzlWxQX/Dkxrtdq5BHAaQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:07:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthenticated\"\n}"
+				},
+				{
+					"name": "User Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjY4OTA4MSwiZXhwIjoxNjYyNjk2MjgxfQ.j6G3lb5rqfWEztRcO6ysRylKPW0qzA6tCuoNxeIdDdQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/6319a1cab7415ba2da45073b",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"6319a1cab7415ba2da45073b"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-ZEVVcvtFhxKX/QUvVKqKxwGbbNA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:08:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User not found\"\n}"
+				},
+				{
+					"name": "User Detail Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjY4OTA4MSwiZXhwIjoxNjYyNjk2MjgxfQ.j6G3lb5rqfWEztRcO6ysRylKPW0qzA6tCuoNxeIdDdQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/6319a1cab7415ba2da45073a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"6319a1cab7415ba2da45073a"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c-HjqkDe7ioQpxOv/fs2vZiQJ92IA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:09:22 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"id\": \"6319a1cab7415ba2da45073a\",\n        \"name\": \"User 4\",\n        \"username\": \"user4\",\n        \"role\": \"Admin\"\n    }\n}"
+				},
+				{
+					"name": "User Unauthorized",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg3MCIsImlhdCI6MTY2MjY4OTEwMSwiZXhwIjoxNjYyNjk2MzAxfQ.q8KjQiRXN0TWxlAMuPsf96ozW2dC9SkSYTRp2LIote4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/6319a1cab7415ba2da45073a",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"6319a1cab7415ba2da45073a"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "58"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"3a-Pxz9Rkv5aK6nwknTcZ0s/gEzuJw\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:10:00 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"You are unauthorized to access this resource\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Add User",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{ADMIN_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "User 8",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "user8",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "user8",
+							"type": "text"
+						},
+						{
+							"key": "role",
+							"value": "User",
+							"description": "Optional, default to User",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/api/v1/user",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthenticated",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTk0NTM1ZjcyZTE0NDQ0YmIxMjE4NyIsImlhdCI6MTY2MjYwMjYyNiwiZXhwIjoxNjYyNjA5ODI2fQ.1097anIHqAlDwzZbb59NzxuXukWTQb8ptBdHKbQ2F9Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "User 4",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "user4",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user4",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-MWhLQqUzlWxQX/Dkxrtdq5BHAaQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:11:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthenticated\"\n}"
+				},
+				{
+					"name": "Role User Unauthorized to Add User",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg3MCIsImlhdCI6MTY2MjY4OTEwMSwiZXhwIjoxNjYyNjk2MzAxfQ.q8KjQiRXN0TWxlAMuPsf96ozW2dC9SkSYTRp2LIote4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "User 4",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "user4",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user4",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-+hyVTXaAZn38wYQ0jjrBzf9HwPI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:11:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized!\"\n}"
+				},
+				{
+					"name": "Username Already Exist",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjY4OTA4MSwiZXhwIjoxNjYyNjk2MjgxfQ.j6G3lb5rqfWEztRcO6ysRylKPW0qzA6tCuoNxeIdDdQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "User 4",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "user4",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user4",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-+c7Lo+CGhRYDtqRElplpnh50aA0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:12:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User user4 already exists\"\n}"
+				},
+				{
+					"name": "Add User Success",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjY4OTA4MSwiZXhwIjoxNjYyNjk2MjgxfQ.j6G3lb5rqfWEztRcO6ysRylKPW0qzA6tCuoNxeIdDdQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "User 5",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "user5",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user5",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "User",
+									"description": "Optional, default to User",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "132"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"84-y/k7c1+/4qXkD4bZXHGBnMRbA70\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:13:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User is created successfully\",\n    \"data\": {\n        \"id\": \"631aa139013794ca3a8d2896\",\n        \"name\": \"User 5\",\n        \"username\": \"user5\",\n        \"role\": \"User\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update User",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{ADMIN_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "User Update",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "user4",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "user4",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "role",
+							"value": "Admin",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{HOST}}/api/v1/user/631aaa30bf28aeda77deffa7",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"631aaa30bf28aeda77deffa7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthenticated",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTk0NTM1ZjcyZTE0NDQ0YmIxMjE4NyIsImlhdCI6MTY2MjYwMjYyNiwiZXhwIjoxNjYyNjA5ODI2fQ.1097anIHqAlDwzZbb59NzxuXukWTQb8ptBdHKbQ2F9Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "User 4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "user2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "user4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/631958c9369b5bd47dbb7d19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"631958c9369b5bd47dbb7d19"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-MWhLQqUzlWxQX/Dkxrtdq5BHAaQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:15:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthenticated\"\n}"
+				},
+				{
+					"name": "Role User Unauthorized to Update Data",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg3MCIsImlhdCI6MTY2MjY4OTEwMSwiZXhwIjoxNjYyNjk2MzAxfQ.q8KjQiRXN0TWxlAMuPsf96ozW2dC9SkSYTRp2LIote4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "User 4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "user2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "user4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/631958c9369b5bd47dbb7d19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"631958c9369b5bd47dbb7d19"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-+hyVTXaAZn38wYQ0jjrBzf9HwPI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:16:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized!\"\n}"
+				},
+				{
+					"name": "Validation Failed Request Body Empty",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjY4OTA4MSwiZXhwIjoxNjYyNjk2MjgxfQ.j6G3lb5rqfWEztRcO6ysRylKPW0qzA6tCuoNxeIdDdQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "User 4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "username",
+									"value": "user2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "user4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/631958c9369b5bd47dbb7d19",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"631958c9369b5bd47dbb7d19"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "57"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"39-sVmW2HR+0Lh1X/Vhq95HC/gmvG0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:17:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Please provide at least one field to update\"\n}"
+				},
+				{
+					"name": "Update User Success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjY4OTA4MSwiZXhwIjoxNjYyNjk2MjgxfQ.j6G3lb5rqfWEztRcO6ysRylKPW0qzA6tCuoNxeIdDdQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "User 5 Update",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "user2",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "password",
+									"value": "user4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/631aa139013794ca3a8d2896",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"631aa139013794ca3a8d2896"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "153"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"99-glOg0H0tCiCG4EAJ0kyCrD84sao\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:18:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User User 5 Update is updated successfully\",\n    \"data\": {\n        \"id\": \"631aa139013794ca3a8d2896\",\n        \"name\": \"User 5 Update\",\n        \"username\": \"user5\",\n        \"role\": \"User\"\n    }\n}"
+				},
+				{
+					"name": "Update User Failed: Username is taken",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjY4OTA4MSwiZXhwIjoxNjYyNjk2MjgxfQ.j6G3lb5rqfWEztRcO6ysRylKPW0qzA6tCuoNxeIdDdQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "User 5 Update",
+									"type": "text"
+								},
+								{
+									"key": "username",
+									"value": "user4",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "user4",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "role",
+									"value": "Admin",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/631aa139013794ca3a8d2896",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"631aa139013794ca3a8d2896"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-+c7Lo+CGhRYDtqRElplpnh50aA0\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:18:41 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User user4 already exists\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete User",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "{{ADMIN_TOKEN}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{HOST}}/api/v1/user/631aaa30bf28aeda77deffa7",
+					"host": [
+						"{{HOST}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"631aaa30bf28aeda77deffa7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Unauthenticated",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTk0NTM1ZjcyZTE0NDQ0YmIxMjE4NyIsImlhdCI6MTY2MjYwMjYyNiwiZXhwIjoxNjYyNjA5ODI2fQ.1097anIHqAlDwzZbb59NzxuXukWTQb8ptBdHKbQ2F9Q",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/631958c9369b5bd47dbb7d12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"631958c9369b5bd47dbb7d12"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "29"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1d-MWhLQqUzlWxQX/Dkxrtdq5BHAaQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:20:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthenticated\"\n}"
+				},
+				{
+					"name": "Role User is Unauthorized to Delete Data",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg3MCIsImlhdCI6MTY2MjY4OTEwMSwiZXhwIjoxNjYyNjk2MzAxfQ.q8KjQiRXN0TWxlAMuPsf96ozW2dC9SkSYTRp2LIote4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/631958c9369b5bd47dbb7d12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"631958c9369b5bd47dbb7d12"
+							]
+						}
+					},
+					"status": "Forbidden",
+					"code": 403,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-+hyVTXaAZn38wYQ0jjrBzf9HwPI\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:21:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Unauthorized!\"\n}"
+				},
+				{
+					"name": "User not Found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjY4OTA4MSwiZXhwIjoxNjYyNjk2MjgxfQ.j6G3lb5rqfWEztRcO6ysRylKPW0qzA6tCuoNxeIdDdQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/631aa139013794ca3a8d2899",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"631aa139013794ca3a8d2899"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "28"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1c-ZEVVcvtFhxKX/QUvVKqKxwGbbNA\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:22:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User not found\"\n}"
+				},
+				{
+					"name": "Delete User Success",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjY4OTA4MSwiZXhwIjoxNjYyNjk2MjgxfQ.j6G3lb5rqfWEztRcO6ysRylKPW0qzA6tCuoNxeIdDdQ",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:30000/api/v1/user/631aa139013794ca3a8d2896",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "30000",
+							"path": [
+								"api",
+								"v1",
+								"user",
+								"631aa139013794ca3a8d2896"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "x-access-token, Origin, Content-Type, Accept"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "39"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"27-27o4zzUjhHNmthTJyia4gBCjpos\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 09 Sep 2022 02:22:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User deleted successfully\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "localhost:30000",
+			"type": "string"
+		},
+		{
+			"key": "ADMIN_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg2ZiIsImlhdCI6MTY2MjY4OTA4MSwiZXhwIjoxNjYyNjk2MjgxfQ.j6G3lb5rqfWEztRcO6ysRylKPW0qzA6tCuoNxeIdDdQ",
+			"type": "string"
+		},
+		{
+			"key": "USER_TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzMTlhMDRmMDJiODE5YTNhOTFlNzg3MCIsImlhdCI6MTY2MjY4OTEwMSwiZXhwIjoxNjYyNjk2MzAxfQ.q8KjQiRXN0TWxlAMuPsf96ozW2dC9SkSYTRp2LIote4",
+			"type": "string"
+		}
+	]
+}
